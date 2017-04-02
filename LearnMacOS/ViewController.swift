@@ -9,11 +9,12 @@
 import Cocoa
 
 class ViewController: NSViewController {
+    
+    @IBOutlet weak var nameTextField: NSTextField!
+    @IBOutlet weak var helloWorldLabel: NSTextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override var representedObject: Any? {
@@ -22,6 +23,11 @@ class ViewController: NSViewController {
         }
     }
 
+    @IBAction func sayHelloButtonTapped(_ sender: Any) {
+        let helloString = "Hello World!!! \n"
+        let nameString = "I'm \(nameTextField.stringValue)"
+        helloWorldLabel.stringValue = helloString + nameString
+    }
 
 }
 
